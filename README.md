@@ -62,15 +62,27 @@
 ## 4. Level 3 - Q12. AWS 활용
 
 ### 12-1. EC2
-health check API : 
+health check API: 
 http://3.38.102.49:8080/actuator/health
 
+EC2 설정 캡처화면
 ![img_10.png](images/img_10.png)
 
+<br/>
+
 ### 12-2. RDS
+RDS 설정 및 연결 캡처화면
 ![img_11.png](images/img_11.png)
+<br/>
+
 ![img_13.png](images/img_13.png)
+
+<br/>
+Parameter Store 캡처화면
+
 ![img_14.png](images/img_14.png)
+
+<br/>
 
 ### 12-3. S3
 Presigned URL - 유효기간 7일
