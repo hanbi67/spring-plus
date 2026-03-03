@@ -13,7 +13,7 @@ public class LogService {
     private final LogRepository logRepository;
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
-    public void write(String action, String status, Long todoId, Long requesterUserId, Long targetManagerUserId, String message) {
-        logRepository.save(new Log(action, status, todoId, requesterUserId, targetManagerUserId, message));
+    public void saveLog(String status, Long todoId, Long requesterUserId, Long targetManagerUserId, String message) {
+        logRepository.save(new Log(status, todoId, requesterUserId, targetManagerUserId, message));
     }
 }

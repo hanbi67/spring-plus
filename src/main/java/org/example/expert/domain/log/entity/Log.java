@@ -15,10 +15,7 @@ public class Log extends Timestamped {
     private Long id;
 
     @Column(nullable = false)
-    private String action;   // MANAGER_REGISTER
-
-    @Column(nullable = false)
-    private String status;   // REQUEST(요청 시), SUCCESS(성공 시), FAIL(실패 시)
+    private String status;   // SUCCESS(성공 시), FAIL(실패 시)
 
     @Column(nullable = false)
     private Long todoId;
@@ -30,8 +27,7 @@ public class Log extends Timestamped {
 
     private String message;
 
-    public Log(String action, String status, Long todoId, Long requesterUserId, Long targetManagerUserId, String message) {
-        this.action = action;
+    public Log(String status, Long todoId, Long requesterUserId, Long targetManagerUserId, String message) {
         this.status = status;
         this.todoId = todoId;
         this.requesterUserId = requesterUserId;

@@ -34,15 +34,10 @@ public class ManagerService {
     @Transactional
     public ManagerSaveResponse saveManager(AuthUser authUser, long todoId, ManagerSaveRequest managerSaveRequest) {
 
-        Long requesterId = authUser.getId();
-        Long targetId = managerSaveRequest.getManagerUserId();
-
-        // 요청이 들어온 순간 로그 저장
-        logService.write("MANAGER_REGISTER", "REQUEST", todoId, requesterId, targetId, null);
+        // 일정을 만든 유저
+        User user = User.fromAuthUser(authUser);
 
         try {
-            // 일정을 만든 유저
-            User user = User.fromAuthUser(authUser);
             Todo todo = todoRepository.findById(todoId)
                     .orElseThrow(() -> new InvalidRequestException("Todo not found"));
 
@@ -61,15 +56,15 @@ public class ManagerService {
             Manager savedManagerUser = managerRepository.save(newManagerUser);
 
             // 성공 시 log 테이블에 로그 저장
-            logService.write("MANAGER_REGISTER", "SUCCESS", todoId, requesterId, targetId, null);
+            logService.saveLog("SUCCESS", todoId, user.getId(), managerUser.getId(), "매니저 등록 성공");
 
             return new ManagerSaveResponse(
                     savedManagerUser.getId(),
                     new UserResponse(managerUser.getId(), managerUser.getEmail())
             );
-        } catch (RuntimeException e) {
+        } catch (Exception e) {
             // 실패 시에도 log 테이블에 로그 저장
-            logService.write("MANAGER_REGISTER", "FAIL", todoId, requesterId, targetId, e.getMessage());
+            logService.saveLog("FAIL", todoId, user.getId(), managerSaveRequest.getManagerUserId(), e.getMessage());
             throw e;
         }
     }
