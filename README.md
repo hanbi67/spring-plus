@@ -1,6 +1,65 @@
-# SPRING PLUS
+# CH 5 플러스 Spring 과제
 
-## Level 3 Q12. AWS 활용
+## 목차
+1. 프로젝트 개요
+2. 기술 스택
+3. 수행한 단계
+4. Level 3 - Q12. AWS 증빙
+5. Level 3 - Q13. 대량의 유저 데이터 검색 성능 개선 비교
+
+---
+
+### 1. 프로젝트 개요
+본 프로젝트는 Spring Boot 기반의 RESTful API 서버로, 일정(Todo) 관리 서비스를 중심으로 다양한 백엔드 핵심 기술을 실습하고 적용한 프로젝트입니다.
+
+**주요 구현 내용**
+- JWT 기반 인증/인가 시스템 구현 및 Spring Security 전환
+- JPA 심화 학습: N+1 문제 해결, Cascade 설정, QueryDSL 적용
+- Spring AOP를 활용한 어드민 접근 로깅
+- 트랜잭션 전파 속성(Propagation)을 활용한 독립적 로그 저장
+- AWS EC2 / RDS / S3를 활용한 클라우드 인프라 구성
+- 500만 건 대용량 유저 데이터 JDBC Bulk Insert 및 인덱스/캐싱을 통한 검색 성능 최적화
+
+---
+
+### 2. 기술 스택
+- Language: Java 17
+- Framework: Spring Boot 3.3.3
+- ORM: Spring Data JPA, Hibernate, QueryDSL
+- Security: Spring Security, JWT
+- Database: MySQL 8.4.7 (AWS RDS), H2 (로컬 테스트)
+- Cloud: AWS EC2, AWS RDS, AWS S3
+- Cache: Spring Cache + Caffeine
+- Build: Gradle
+- Test: JUnit 5, Spring Boot Test
+
+
+---
+
+### 3. 수행한 단계
+
+`필수 기능` LV 1
+1. 코드 개선 퀴즈 - @Transactional의 이해
+2. 코드 추가 퀴즈 - JWT의 이해
+3. 코드 개선 퀴즈 - JPA의 이해
+4. 테스트 코드 퀴즈 - 컨트롤러 테스트의 이해
+5. 코드 개선 퀴즈 - AOP의 이해
+
+`필수 기능` LV 2
+6. JPA Cascade
+7. N+1
+8. QueryDSL
+9. Spring Security
+
+`도전 기능` LV 3
+10. QueryDSL을 사용하여 검색 기능 만들기
+11. Transaction 심화
+12. AWS 활용
+13. 대용량 데이터 처리
+
+---
+
+## 4. Level 3 - Q12. AWS 활용
 
 ### 12-1. EC2
 health check API : 
@@ -19,7 +78,7 @@ https://spring-plus-bucket-hanbi.s3.ap-northeast-2.amazonaws.com/uploads/35fa9c3
 
 
 ---
-## Level 3 Q13. 대용량 데이터 처리
+## 5. Level 3 - Q13. 대용량 데이터 처리
 
 #### 유저 검색 속도를 감소시킬 수 있는 여러 방법 탐색
 
