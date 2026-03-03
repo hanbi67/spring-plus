@@ -39,23 +39,23 @@
 ### 3. 수행한 단계
 
 `필수 기능` LV 1
-1. 코드 개선 퀴즈 - @Transactional의 이해
-2. 코드 추가 퀴즈 - JWT의 이해
-3. 코드 개선 퀴즈 - JPA의 이해
-4. 테스트 코드 퀴즈 - 컨트롤러 테스트의 이해
-5. 코드 개선 퀴즈 - AOP의 이해
+- Q1. 코드 개선 퀴즈 - @Transactional의 이해
+- Q2. 코드 추가 퀴즈 - JWT의 이해
+- Q3. 코드 개선 퀴즈 - JPA의 이해
+- Q4. 테스트 코드 퀴즈 - 컨트롤러 테스트의 이해
+- Q5. 코드 개선 퀴즈 - AOP의 이해
 
 `필수 기능` LV 2
-6. JPA Cascade
-7. N+1
-8. QueryDSL
-9. Spring Security
+- Q6. JPA Cascade
+- Q7. N+1
+- Q8. QueryDSL
+- Q9. Spring Security
 
 `도전 기능` LV 3
-10. QueryDSL을 사용하여 검색 기능 만들기
-11. Transaction 심화
-12. AWS 활용
-13. 대용량 데이터 처리
+- Q10. QueryDSL을 사용하여 검색 기능 만들기
+- Q11. Transaction 심화
+- Q12. AWS 활용
+- Q13. 대용량 데이터 처리
 
 ---
 
