@@ -10,6 +10,8 @@ import org.example.expert.domain.user.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
@@ -49,9 +51,7 @@ public class UserService {
         }
     }
 
-    public UserResponse getUserByNickname(String nickname) {
-        User user = userRepository.findByNickname(nickname).orElseThrow(
-                () -> new InvalidRequestException("존재하지 않는 사용자입니다."));
-        return new UserResponse(user.getId(), user.getEmail());
+    public List<UserResponse> getUserByNickname(String nickname) {
+        return userRepository.findByNickname(nickname);
     }
 }
