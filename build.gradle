@@ -55,6 +55,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-cache'
     // 캐시는 로컬 캐시 : caffeine을 사용할 것임
     implementation 'com.github.ben-manes.caffeine:caffeine'
+
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'io.awspring.cloud:spring-cloud-aws-starter-s3:3.1.1'
+    implementation 'io.awspring.cloud:spring-cloud-aws-starter-parameter-store:3.1.1'
 }
 
 tasks.named('test') {

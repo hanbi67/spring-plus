@@ -29,6 +29,8 @@ public class SecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 // URL별 접근 권한 설정
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/actuator/**").permitAll()
+                        .requestMatchers("/users/{userId}/profile-image").permitAll()
                         .requestMatchers("/auth/**").permitAll()       // 로그인/회원가입은 누구나 접근 가능
                         .requestMatchers("/admin/**").hasRole("ADMIN") // /admin은 ADMIN만 접근 가능
                         .anyRequest().authenticated()                   // 나머지는 로그인한 사람만
