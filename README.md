@@ -154,4 +154,7 @@ https://spring-plus-bucket-hanbi.s3.ap-northeast-2.amazonaws.com/uploads/35fa9c3
 | 5 | 캐싱 적용               | 9ms   | DB 접근 없이 메모리에서 반환 |
 
 
+---
+
+**트러블슈팅 TIL** - https://velog.io/@dlql6717/TIL-CH-5-플러스-Spring-과제-트러블슈팅
 
